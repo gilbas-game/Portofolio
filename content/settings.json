@@ -1,0 +1,44 @@
+{
+  "site": {
+    "title": "LensaKu | Portfolio Fotografi",
+    "logoText": "Lensa",
+    "logoHighlight": "Ku",
+    "faviconEmoji": "camera"
+  },
+  "navigation": [
+    { "label": "Home", "icon": "fas fa-home", "href": "#home" },
+    { "label": "Portfolio", "icon": "fas fa-images", "href": "#portfolio" },
+    { "label": "Tentang", "icon": "fas fa-user", "href": "#about" },
+    { "label": "Layanan", "icon": "fas fa-concierge-bell", "href": "#services" },
+    { "label": "Kontak", "icon": "fas fa-envelope", "href": "#contact" }
+  ],
+  "hero": {
+    "title": "Mengabadikan Momen, Menciptakan Kenangan",
+    "subtitle": "Fotografi adalah cara saya menceritakan kisah tanpa kata-kata",
+    "buttonText": "Lihat Karya Saya",
+    "buttonLink": "#portfolio",
+    "backgroundImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+  "footer": {
+    "logoText": "Lensa",
+    "logoHighlight": "Ku",
+    "description": "Mengabadikan setiap momen dengan hati dan karya terbaik.",
+    "quickLinks": [
+      { "label": "Home", "href": "#home" },
+      { "label": "Portfolio", "href": "#portfolio" },
+      { "label": "Tentang", "href": "#about" },
+      { "label": "Layanan", "href": "#services" },
+      { "label": "Kontak", "href": "#contact" }
+    ],
+    "newsletterTitle": "Tips Fotografi",
+    "newsletterDescription": "Ingin tips fotografi gratis? Ikuti media sosial saya untuk update terbaru.",
+    "socialLinks": [
+      { "icon": "fab fa-instagram", "href": "https://www.instagram.com/gilbas370?igsh=MW5hOXdkdzhmb2Fxeg==", "class": "instagram" },
+      { "icon": "fab fa-whatsapp", "href": "https://wa.me/6282372320958", "class": "whatsapp" }
+    ],
+    "copyright": "LensaKu Photography. All rights reserved.",
+    "madeWithText": "Dibuat dengan",
+    "madeWithIcon": "fas fa-heart",
+    "madeWithSuffix": "untuk para pecinta fotografi"
+  }
+}

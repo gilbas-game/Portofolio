@@ -1,0 +1,197 @@
+{
+  "site": {
+    "title": "LensaKu | Portfolio Fotografi",
+    "logoText": "Lensa",
+    "logoHighlight": "Ku",
+    "faviconEmoji": "📸"
+  },
+
+  "navigation": [
+    { "label": "Home", "icon": "fas fa-home", "href": "#home" },
+    { "label": "Portfolio", "icon": "fas fa-images", "href": "#portfolio" },
+    { "label": "Tentang", "icon": "fas fa-user", "href": "#about" },
+    { "label": "Layanan", "icon": "fas fa-concierge-bell", "href": "#services" },
+    { "label": "Kontak", "icon": "fas fa-envelope", "href": "#contact" }
+  ],
+
+  "hero": {
+    "title": "Mengabadikan Momen, Menciptakan Kenangan",
+    "subtitle": "Fotografi adalah cara saya menceritakan kisah tanpa kata-kata",
+    "buttonText": "Lihat Karya Saya",
+    "buttonLink": "#portfolio",
+    "backgroundImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+  },
+
+  "about": {
+    "title": "Tentang Saya",
+    "name": "Gilang",
+    "image": "https://i.ibb.co.com/9HV13gGD/Gilang.jpg",
+    "imageAlt": "Fotografer Gilang",
+    "paragraphs": [
+      "Seorang fotografer pemula yang bersemangat dalam mengabadikan momen-momen berharga melalui lensa kamera. Saya memiliki ketertarikan khusus pada fotografi portrait, landscape, dan street photography.",
+      "Perjalanan saya dimulai 1 tahun yang lalu dengan kamera smartphone, dan sejak itu berkembang menjadi hasrat mendalam untuk bercerita melalui visual. Saya percaya setiap gambar memiliki ceritanya sendiri."
+    ],
+    "stats": [
+      { "value": 0, "label": "Proyek Selesai" },
+      { "value": 0, "label": "Klien Puas" },
+      { "value": 1, "label": "Tahun Pengalaman" }
+    ],
+    "specializations": [
+      "Portrait",
+      "Landscape",
+      "Street Photography",
+      "Event Photography",
+      "Black & White"
+    ]
+  },
+
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Koleksi karya terbaik yang telah saya abadikan",
+    "filters": [
+      { "label": "Semua", "value": "all" },
+      { "label": "Portrait", "value": "portrait" },
+      { "label": "Landscape", "value": "landscape" },
+      { "label": "Street", "value": "street" },
+      { "label": "Black & White", "value": "blackwhite" }
+    ],
+    "items": [
+      { "id": 1, "title": "Urban Reflections", "category": "landscape", "image": "https://i.ibb.co.com/dJjMfN7Y/IMG-LANDSCAPE-2.jpg", "description": "Pemandangan alam luas dengan langit cerah." },
+      { "id": 2, "title": "Mountain Majesty", "category": "landscape", "image": "https://i.ibb.co.com/tP2W7D2g/IMG-LANDSCAPE.jpg", "description": "Pemandangan outdoor alam indah dan hijau" },
+      { "id": 3, "title": "Portrait of Wisdom", "category": "portrait", "image": "https://i.ibb.co.com/M0Ng4r4/IMG-PORTRAIT-4.jpg", "description": "Potret orang dengan latar belakang sederhana." },
+      { "id": 4, "title": "Silhouette Dreams", "category": "portrait", "image": "https://i.ibb.co.com/jvCLdMXB/IMG-PORTRAIT-5.jpg", "description": "Potret seseorang fokus wajah, ekspresi alami." },
+      { "id": 5, "title": "Forest Whispers", "category": "portrait", "image": "https://i.ibb.co.com/Df5Hkhcv/IMG-PORTRAIT-6.jpg", "description": "Fotografi orang/aktivitas candid, suasana nyata." },
+      { "id": 6, "title": "Urban Geometry", "category": "portrait", "image": "https://i.ibb.co.com/pvZhXtD2/IMG-PORTRAIT-TINA-2.jpg", "description": "Foto close-up detail subjek tajam, fokus kuat." },
+      { "id": 7, "title": "Monochrome Portrait", "category": "portrait", "image": "https://i.ibb.co.com/xK7KP8T3/IMG-PORTRAIT.jpg", "description": "Gambar wajah dengan pencahayaan kontras menarik." },
+      { "id": 8, "title": "Coastal Serenity", "category": "portrait", "image": "https://i.ibb.co.com/j2ySfDL/IMG-PORTRAIT-BLACK-WHITE.jpg", "description": "Potret ekspresif manusia dengan latar sederhana." },
+      { "id": 9, "title": "Street Stories", "category": "street", "image": "https://i.ibb.co.com/BHHn2bwk/IMG-STREET-2.jpg", "description": "Foto candid orang atau momen spontan." }
+    ]
+  },
+
+  "services": {
+    "title": "Layanan",
+    "subtitle": "Jasa fotografi yang saya tawarkan",
+    "items": [
+      {
+        "icon": "fas fa-user-friends",
+        "title": "Fotografi Portrait",
+        "description": "Mengabadikan momen spesial individu, keluarga, atau pasangan dengan sentuhan artistik dan emosional.",
+        "features": ["Sesi 2-3 jam", "50+ foto hasil edit", "Lokasi sesuai kesepakatan"]
+      },
+      {
+        "icon": "fas fa-mountain",
+        "title": "Fotografi Landscape",
+        "description": "Menangkap keindahan alam, pemandangan kota, dan lanskap dengan komposisi yang memukau.",
+        "features": ["Sunrise/sunset sessions", "Editing profesional", "Cetak ukuran besar"]
+      },
+      {
+        "icon": "fas fa-glass-cheers",
+        "title": "Fotografi Acara",
+        "description": "Mendokumentasikan momen spesial seperti pernikahan, ulang tahun, dan acara perusahaan.",
+        "features": ["Full-day coverage", "200+ foto hasil edit", "Album digital"]
+      }
+    ]
+  },
+
+  "contact": {
+    "title": "Hubungi Saya",
+    "subtitle": "Saya siap membantu mengabadikan momen spesial Anda",
+    "header": {
+      "icon": "fas fa-comments",
+      "title": "Mari Berkolaborasi",
+      "description": "Untuk konsultasi, penawaran proyek, atau sekadar berdiskusi tentang fotografi, silakan hubungi saya melalui kontak di bawah ini."
+    },
+    "cards": [
+      {
+        "type": "whatsapp",
+        "icon": "fab fa-whatsapp",
+        "title": "WhatsApp",
+        "description": "Metode tercepat untuk respon langsung. Cocok untuk konsultasi cepat dan diskusi proyek.",
+        "details": [
+          { "icon": "fas fa-phone", "text": "+62 823 7232 0958" },
+          { "icon": "fas fa-clock", "text": "Respon: 1-2 jam kerja" }
+        ],
+        "buttonText": "Chat Sekarang",
+        "buttonIcon": "fab fa-whatsapp",
+        "buttonLink": "https://wa.link/gekgr1",
+        "tip": "Sebutkan jenis foto, tanggal, dan lokasi saat menghubungi"
+      },
+      {
+        "type": "instagram",
+        "icon": "fab fa-instagram",
+        "title": "Instagram",
+        "description": "Lihat portfolio terbaru dan kirim direct message untuk diskusi lebih lanjut.",
+        "details": [
+          { "icon": "fas fa-at", "text": "@gilang370" },
+          { "icon": "fas fa-images", "text": "Portfolio update mingguan" }
+        ],
+        "buttonText": "Lihat Karya",
+        "buttonIcon": "fab fa-instagram",
+        "buttonLink": "https://www.instagram.com/gilbas370?igsh=MW5hOXdkdzhmb2Fxeg==",
+        "tip": "Follow untuk inspirasi fotografi harian"
+      },
+      {
+        "type": "email",
+        "icon": "fas fa-envelope",
+        "title": "Email",
+        "description": "Untuk penawaran formal, dokumen, atau pertanyaan detail tentang layanan.",
+        "details": [
+          { "icon": "fas fa-inbox", "text": "gbagas370@gmail.com" },
+          { "icon": "fas fa-clock", "text": "Respon: 24-48 jam" }
+        ],
+        "buttonText": "Kirim Email",
+        "buttonIcon": "fas fa-envelope",
+        "buttonLink": "mailto:gbagas370@gmail.com",
+        "tip": "Sertakan detail proyek lengkap"
+      }
+    ],
+    "infoBoxes": [
+      {
+        "icon": "fas fa-calendar-check",
+        "title": "Ketersediaan Jadwal",
+        "description": "Saya biasanya available Sabtu-Minggu, 09:00-18:00 WIB. Pemesanan minimal 3 hari sebelumnya."
+      },
+      {
+        "icon": "fas fa-map-marker-alt",
+        "title": "Area Layanan",
+        "description": "Binjai dan sekitarnya. Untuk luar kota tersedia dengan tambahan biaya transportasi."
+      },
+      {
+        "icon": "fas fa-question-circle",
+        "title": "Pertanyaan Umum",
+        "description": "Butuh referensi harga? Silahkan langsung chat untuk penawaran khusus."
+      }
+    ],
+    "cta": {
+      "title": "Siap Mengabadikan Momen Anda?",
+      "description": "Jangan ragu untuk menghubungi saya. Saya akan dengan senang hati mendiskusikan ide dan visi Anda.",
+      "buttonText": "Mulai Percakapan di WhatsApp",
+      "buttonIcon": "fab fa-whatsapp",
+      "buttonLink": "https://wa.me/6282372320958?text=Halo%20Gilang,%20saya%20tertarik%20dengan%20jasa%20fotografi%20Anda.%20Bisa%20diskusi%20proyek?",
+      "note": "Pesan template sudah disiapkan untuk memudahkan Anda"
+    }
+  },
+
+  "footer": {
+    "logoText": "Lensa",
+    "logoHighlight": "Ku",
+    "description": "Mengabadikan setiap momen dengan hati dan karya terbaik.",
+    "quickLinks": [
+      { "label": "Home", "href": "#home" },
+      { "label": "Portfolio", "href": "#portfolio" },
+      { "label": "Tentang", "href": "#about" },
+      { "label": "Layanan", "href": "#services" },
+      { "label": "Kontak", "href": "#contact" }
+    ],
+    "newsletterTitle": "Tips Fotografi",
+    "newsletterDescription": "Ingin tips fotografi gratis? Ikuti media sosial saya untuk update terbaru.",
+    "socialLinks": [
+      { "icon": "fab fa-instagram", "href": "https://www.instagram.com/gilbas370?igsh=MW5hOXdkdzhmb2Fxeg==", "class": "instagram" },
+      { "icon": "fab fa-whatsapp", "href": "https://wa.me/6282372320958", "class": "whatsapp" }
+    ],
+    "copyright": "LensaKu Photography. All rights reserved.",
+    "madeWithText": "Dibuat dengan",
+    "madeWithIcon": "fas fa-heart",
+    "madeWithSuffix": "untuk para pecinta fotografi"
+  }
+}

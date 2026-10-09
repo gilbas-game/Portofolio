@@ -1,0 +1,22 @@
+{
+  "title": "Tentang Saya",
+  "name": "Gilang",
+  "image": "https://i.ibb.co.com/9HV13gGD/Gilang.jpg",
+  "imageAlt": "Fotografer Gilang",
+  "paragraphs": [
+    "Seorang fotografer pemula yang bersemangat dalam mengabadikan momen-momen berharga melalui lensa kamera. Saya memiliki ketertarikan khusus pada fotografi portrait, landscape, dan street photography.",
+    "Perjalanan saya dimulai 1 tahun yang lalu dengan kamera smartphone, dan sejak itu berkembang menjadi hasrat mendalam untuk bercerita melalui visual. Saya percaya setiap gambar memiliki ceritanya sendiri."
+  ],
+  "stats": [
+    { "value": 0, "label": "Proyek Selesai" },
+    { "value": 0, "label": "Klien Puas" },
+    { "value": 1, "label": "Tahun Pengalaman" }
+  ],
+  "specializations": [
+    "Portrait",
+    "Landscape",
+    "Street Photography",
+    "Event Photography",
+    "Black & White"
+  ]
+}

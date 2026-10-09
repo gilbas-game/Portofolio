@@ -1,0 +1,78 @@
+{
+  "title": "Hubungi Saya",
+  "subtitle": "Saya siap membantu mengabadikan momen spesial Anda",
+  "header": {
+    "icon": "fas fa-comments",
+    "title": "Mari Berkolaborasi",
+    "description": "Untuk konsultasi, penawaran proyek, atau sekadar berdiskusi tentang fotografi, silakan hubungi saya melalui kontak di bawah ini."
+  },
+  "cards": [
+    {
+      "type": "whatsapp",
+      "icon": "fab fa-whatsapp",
+      "title": "WhatsApp",
+      "description": "Metode tercepat untuk respon langsung. Cocok untuk konsultasi cepat dan diskusi proyek.",
+      "details": [
+        { "icon": "fas fa-phone", "text": "+62 823 7232 0958" },
+        { "icon": "fas fa-clock", "text": "Respon: 1-2 jam kerja" }
+      ],
+      "buttonText": "Chat Sekarang",
+      "buttonIcon": "fab fa-whatsapp",
+      "buttonLink": "https://wa.link/gekgr1",
+      "tip": "Sebutkan jenis foto, tanggal, dan lokasi saat menghubungi"
+    },
+    {
+      "type": "instagram",
+      "icon": "fab fa-instagram",
+      "title": "Instagram",
+      "description": "Lihat portfolio terbaru dan kirim direct message untuk diskusi lebih lanjut.",
+      "details": [
+        { "icon": "fas fa-at", "text": "@gilang370" },
+        { "icon": "fas fa-images", "text": "Portfolio update mingguan" }
+      ],
+      "buttonText": "Lihat Karya",
+      "buttonIcon": "fab fa-instagram",
+      "buttonLink": "https://www.instagram.com/gilbas370?igsh=MW5hOXdkdzhmb2Fxeg==",
+      "tip": "Follow untuk inspirasi fotografi harian"
+    },
+    {
+      "type": "email",
+      "icon": "fas fa-envelope",
+      "title": "Email",
+      "description": "Untuk penawaran formal, dokumen, atau pertanyaan detail tentang layanan.",
+      "details": [
+        { "icon": "fas fa-inbox", "text": "gbagas370@gmail.com" },
+        { "icon": "fas fa-clock", "text": "Respon: 24-48 jam" }
+      ],
+      "buttonText": "Kirim Email",
+      "buttonIcon": "fas fa-envelope",
+      "buttonLink": "mailto:gbagas370@gmail.com",
+      "tip": "Sertakan detail proyek lengkap"
+    }
+  ],
+  "infoBoxes": [
+    {
+      "icon": "fas fa-calendar-check",
+      "title": "Ketersediaan Jadwal",
+      "description": "Saya biasanya available Sabtu-Minggu, 09:00-18:00 WIB. Pemesanan minimal 3 hari sebelumnya."
+    },
+    {
+      "icon": "fas fa-map-marker-alt",
+      "title": "Area Layanan",
+      "description": "Binjai dan sekitarnya. Untuk luar kota tersedia dengan tambahan biaya transportasi."
+    },
+    {
+      "icon": "fas fa-question-circle",
+      "title": "Pertanyaan Umum",
+      "description": "Butuh referensi harga? Silahkan langsung chat untuk penawaran khusus."
+    }
+  ],
+  "cta": {
+    "title": "Siap Mengabadikan Momen Anda?",
+    "description": "Jangan ragu untuk menghubungi saya. Saya akan dengan senang hati mendiskusikan ide dan visi Anda.",
+    "buttonText": "Mulai Percakapan di WhatsApp",
+    "buttonIcon": "fab fa-whatsapp",
+    "buttonLink": "https://wa.me/6282372320958?text=Halo%20Gilang,%20saya%20tertarik%20dengan%20jasa%20fotografi%20Anda.%20Bisa%20diskusi%20proyek?",
+    "note": "Pesan template sudah disiapkan untuk memudahkan Anda"
+  }
+}

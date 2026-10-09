@@ -1,0 +1,42 @@
+name: Optimize Images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'images/**'
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install sharp
+        run: cd scripts && npm install
+
+      - name: Optimize images
+        run: cd scripts && node optimize-images.js
+
+      - name: Commit optimized images
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add images/
+          if git diff --staged --quiet; then
+            echo "No changes - images already optimized"
+          else
+            git commit -m "chore: optimize images [skip ci]"
+            git push
+          fi

@@ -1,0 +1,22 @@
+{
+  "title": "Portfolio",
+  "subtitle": "Koleksi karya terbaik yang telah saya abadikan",
+  "filters": [
+    { "label": "Semua", "value": "all" },
+    { "label": "Portrait", "value": "portrait" },
+    { "label": "Landscape", "value": "landscape" },
+    { "label": "Street", "value": "street" },
+    { "label": "Black & White", "value": "blackwhite" }
+  ],
+  "items": [
+    { "id": 1, "title": "Urban Reflections", "category": "landscape", "image": "https://i.ibb.co.com/dJjMfN7Y/IMG-LANDSCAPE-2.jpg", "description": "Pemandangan alam luas dengan langit cerah." },
+    { "id": 2, "title": "Mountain Majesty", "category": "landscape", "image": "https://i.ibb.co.com/tP2W7D2g/IMG-LANDSCAPE.jpg", "description": "Pemandangan outdoor alam indah dan hijau" },
+    { "id": 3, "title": "Portrait of Wisdom", "category": "portrait", "image": "https://i.ibb.co.com/M0Ng4r4/IMG-PORTRAIT-4.jpg", "description": "Potret orang dengan latar belakang sederhana." },
+    { "id": 4, "title": "Silhouette Dreams", "category": "portrait", "image": "https://i.ibb.co.com/jvCLdMXB/IMG-PORTRAIT-5.jpg", "description": "Potret seseorang fokus wajah, ekspresi alami." },
+    { "id": 5, "title": "Forest Whispers", "category": "portrait", "image": "https://i.ibb.co.com/Df5Hkhcv/IMG-PORTRAIT-6.jpg", "description": "Fotografi orang/aktivitas candid, suasana nyata." },
+    { "id": 6, "title": "Urban Geometry", "category": "portrait", "image": "https://i.ibb.co.com/pvZhXtD2/IMG-PORTRAIT-TINA-2.jpg", "description": "Foto close-up detail subjek tajam, fokus kuat." },
+    { "id": 7, "title": "Monochrome Portrait", "category": "portrait", "image": "https://i.ibb.co.com/xK7KP8T3/IMG-PORTRAIT.jpg", "description": "Gambar wajah dengan pencahayaan kontras menarik." },
+    { "id": 8, "title": "Coastal Serenity", "category": "portrait", "image": "https://i.ibb.co.com/j2ySfDL/IMG-PORTRAIT-BLACK-WHITE.jpg", "description": "Potret ekspresif manusia dengan latar sederhana." },
+    { "id": 9, "title": "Street Stories", "category": "street", "image": "https://i.ibb.co.com/BHHn2bwk/IMG-STREET-2.jpg", "description": "Foto candid orang atau momen spontan." }
+  ]
+}

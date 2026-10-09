@@ -1,0 +1,240 @@
+# ============================================================
+# LensaKu - Decap CMS Configuration
+# ============================================================
+# Cara setup:
+# 1. Buat GitHub OAuth App di https://github.com/settings/developers
+#    - Homepage URL: https://gilbas-game.github.io/Portofolio/
+#    - Authorization callback URL: https://gilbas-game.github.io/Portofolio/admin/
+# 2. Copy Client ID dan paste di app_id di bawah
+# 3. Buka https://gilbas-game.github.io/Portofolio/admin/ untuk login
+# ============================================================
+
+backend:
+  name: github
+  repo: gilbas-game/Portofolio
+  branch: main
+  auth_type: pkce
+  app_id: ""  # <-- GANTI dengan GitHub OAuth App Client ID kamu
+
+media_folder: "images"
+public_folder: "images"
+site_url: https://gilbas-game.github.io/Portofolio/
+display_url: https://gilbas-game.github.io/Portofolio/
+
+# Uncomment untuk development lokal (butuh npx decap-server)
+# local_backend: true
+
+# ============================================================
+# KOLEKSI KONTEN
+# ============================================================
+collections:
+  # --- 1. PENGATURAN WEBSITE ---
+  - name: "settings"
+    label: "Pengaturan Website"
+    description: "Logo, navigasi, hero, dan footer"
+    files:
+      - file: "content/settings.json"
+        name: "settings"
+        label: "Pengaturan"
+        format: json
+        fields:
+          - name: "site"
+            label: "Info Website"
+            widget: "object"
+            fields:
+              - {name: "title", label: "Judul Tab Browser", widget: "string"}
+              - {name: "logoText", label: "Teks Logo (bagian awal)", widget: "string"}
+              - {name: "logoHighlight", label: "Teks Logo (bagian highlight)", widget: "string"}
+              - {name: "faviconEmoji", label: "Favicon Emoji", widget: "string", required: false}
+
+          - name: "navigation"
+            label: "Menu Navigasi"
+            widget: "list"
+            hint: "Menu yang tampil di header"
+            fields:
+              - {name: "label", label: "Label Menu", widget: "string"}
+              - {name: "icon", label: "Icon Font Awesome", widget: "string", hint: "Contoh: fas fa-home"}
+              - {name: "href", label: "Link Tujuan", widget: "string", hint: "Contoh: #home"}
+
+          - name: "hero"
+            label: "Section Hero (Banner Utama)"
+            widget: "object"
+            fields:
+              - {name: "title", label: "Judul Utama", widget: "string"}
+              - {name: "subtitle", label: "Subtitle", widget: "string"}
+              - {name: "buttonText", label: "Teks Tombol", widget: "string"}
+              - {name: "buttonLink", label: "Link Tombol", widget: "string"}
+              - {name: "backgroundImage", label: "Gambar Background", widget: "image"}
+
+          - name: "footer"
+            label: "Footer"
+            widget: "object"
+            fields:
+              - {name: "logoText", label: "Teks Logo", widget: "string"}
+              - {name: "logoHighlight", label: "Highlight Logo", widget: "string"}
+              - {name: "description", label: "Deskripsi Footer", widget: "string"}
+              - name: "quickLinks"
+                label: "Tautan Cepat"
+                widget: "list"
+                fields:
+                  - {name: "label", label: "Label", widget: "string"}
+                  - {name: "href", label: "Link", widget: "string"}
+              - {name: "newsletterTitle", label: "Judul Section Sosial", widget: "string"}
+              - {name: "newsletterDescription", label: "Deskripsi Section Sosial", widget: "string"}
+              - name: "socialLinks"
+                label: "Link Media Sosial"
+                widget: "list"
+                fields:
+                  - {name: "icon", label: "Icon", widget: "string", hint: "Contoh: fab fa-instagram"}
+                  - {name: "href", label: "URL", widget: "string"}
+                  - {name: "class", label: "Class CSS", widget: "string"}
+              - {name: "copyright", label: "Teks Copyright", widget: "string"}
+              - {name: "madeWithText", label: "Teks 'Dibuat dengan'", widget: "string"}
+              - {name: "madeWithIcon", label: "Icon 'Dibuat dengan'", widget: "string"}
+              - {name: "madeWithSuffix", label: "Teks setelah icon", widget: "string"}
+
+  # --- 2. TENTANG SAYA ---
+  - name: "about"
+    label: "Tentang Saya"
+    description: "Bio, statistik, dan spesialisasi"
+    files:
+      - file: "content/about.json"
+        name: "about"
+        label: "About Section"
+        format: json
+        fields:
+          - {name: "title", label: "Judul Section", widget: "string"}
+          - {name: "name", label: "Nama Fotografer", widget: "string"}
+          - {name: "image", label: "Foto Profil", widget: "image"}
+          - {name: "imageAlt", label: "Alt Text Foto", widget: "string"}
+          - name: "paragraphs"
+            label: "Paragraf Bio"
+            widget: "list"
+            hint: "Tiap item adalah satu paragraf"
+          - name: "stats"
+            label: "Statistik (angka di profil)"
+            widget: "list"
+            hint: "Contoh: Proyek Selesai = 5"
+            fields:
+              - {name: "value", label: "Angka", widget: "number", value_type: "int"}
+              - {name: "label", label: "Label", widget: "string"}
+          - name: "specializations"
+            label: "Spesialisasi"
+            widget: "list"
+            hint: "Contoh: Portrait, Landscape, dll"
+
+  # --- 3. PORTFOLIO ---
+  - name: "portfolio"
+    label: "Portfolio Foto"
+    description: "Koleksi foto dan kategori"
+    files:
+      - file: "content/portfolio.json"
+        name: "portfolio"
+        label: "Portfolio Section"
+        format: json
+        fields:
+          - {name: "title", label: "Judul Section", widget: "string"}
+          - {name: "subtitle", label: "Subtitle", widget: "string"}
+          - name: "filters"
+            label: "Filter Kategori"
+            widget: "list"
+            hint: "Kategori untuk filter foto"
+            fields:
+              - {name: "label", label: "Label Tampilan", widget: "string"}
+              - {name: "value", label: "Value (internal)", widget: "string"}
+          - name: "items"
+            label: "Daftar Foto"
+            widget: "list"
+            hint: "Tambah/hapus foto portfolio di sini"
+            fields:
+              - {name: "id", label: "ID (angka unik)", widget: "number", value_type: "int"}
+              - {name: "title", label: "Judul Foto", widget: "string"}
+              - name: "category"
+                label: "Kategori"
+                widget: "select"
+                options: ["portrait", "landscape", "street", "blackwhite"]
+              - {name: "image", label: "Foto", widget: "image"}
+              - {name: "description", label: "Deskripsi", widget: "text"}
+
+  # --- 4. LAYANAN ---
+  - name: "services"
+    label: "Layanan"
+    description: "Jasa fotografi yang ditawarkan"
+    files:
+      - file: "content/services.json"
+        name: "services"
+        label: "Services Section"
+        format: json
+        fields:
+          - {name: "title", label: "Judul Section", widget: "string"}
+          - {name: "subtitle", label: "Subtitle", widget: "string"}
+          - name: "items"
+            label: "Daftar Layanan"
+            widget: "list"
+            fields:
+              - {name: "icon", label: "Icon Font Awesome", widget: "string", hint: "Contoh: fas fa-user-friends"}
+              - {name: "title", label: "Nama Layanan", widget: "string"}
+              - {name: "description", label: "Deskripsi Layanan", widget: "text"}
+              - name: "features"
+                label: "Fitur Layanan"
+                widget: "list"
+                hint: "Contoh: Sesi 2-3 jam"
+
+  # --- 5. KONTAK ---
+  - name: "contact"
+    label: "Kontak"
+    description: "Info kontak, kartu kontak, dan CTA"
+    files:
+      - file: "content/contact.json"
+        name: "contact"
+        label: "Contact Section"
+        format: json
+        fields:
+          - {name: "title", label: "Judul Section", widget: "string"}
+          - {name: "subtitle", label: "Subtitle", widget: "string"}
+          - name: "header"
+            label: "Header Kontak"
+            widget: "object"
+            fields:
+              - {name: "icon", label: "Icon", widget: "string"}
+              - {name: "title", label: "Judul Header", widget: "string"}
+              - {name: "description", label: "Deskripsi Header", widget: "text"}
+          - name: "cards"
+            label: "Kartu Kontak"
+            widget: "list"
+            hint: "WhatsApp, Instagram, Email, dll"
+            fields:
+              - name: "type"
+                label: "Tipe Kartu"
+                widget: "select"
+                options: ["whatsapp", "instagram", "email"]
+              - {name: "icon", label: "Icon", widget: "string"}
+              - {name: "title", label: "Judul Kartu", widget: "string"}
+              - {name: "description", label: "Deskripsi", widget: "text"}
+              - name: "details"
+                label: "Detail Kontak"
+                widget: "list"
+                fields:
+                  - {name: "icon", label: "Icon", widget: "string"}
+                  - {name: "text", label: "Teks", widget: "string"}
+              - {name: "buttonText", label: "Teks Tombol", widget: "string"}
+              - {name: "buttonIcon", label: "Icon Tombol", widget: "string"}
+              - {name: "buttonLink", label: "Link Tombol", widget: "string"}
+              - {name: "tip", label: "Tips", widget: "string"}
+          - name: "infoBoxes"
+            label: "Info Box Tambahan"
+            widget: "list"
+            fields:
+              - {name: "icon", label: "Icon", widget: "string"}
+              - {name: "title", label: "Judul", widget: "string"}
+              - {name: "description", label: "Deskripsi", widget: "text"}
+          - name: "cta"
+            label: "Call To Action (CTA)"
+            widget: "object"
+            fields:
+              - {name: "title", label: "Judul CTA", widget: "string"}
+              - {name: "description", label: "Deskripsi CTA", widget: "text"}
+              - {name: "buttonText", label: "Teks Tombol CTA", widget: "string"}
+              - {name: "buttonIcon", label: "Icon Tombol CTA", widget: "string"}
+              - {name: "buttonLink", label: "Link Tombol CTA", widget: "string"}
+              - {name: "note", label: "Catatan CTA", widget: "string"}

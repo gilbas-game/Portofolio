@@ -1,0 +1,9 @@
+{
+  "name": "lensaku-image-optimizer",
+  "version": "1.0.0",
+  "description": "Automatic image optimization for LensaKu portfolio",
+  "private": true,
+  "dependencies": {
+    "sharp": "^0.33.0"
+  }
+}

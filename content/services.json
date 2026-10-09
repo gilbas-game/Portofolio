@@ -1,0 +1,24 @@
+{
+  "title": "Layanan",
+  "subtitle": "Jasa fotografi yang saya tawarkan",
+  "items": [
+    {
+      "icon": "fas fa-user-friends",
+      "title": "Fotografi Portrait",
+      "description": "Mengabadikan momen spesial individu, keluarga, atau pasangan dengan sentuhan artistik dan emosional.",
+      "features": ["Sesi 2-3 jam", "50+ foto hasil edit", "Lokasi sesuai kesepakatan"]
+    },
+    {
+      "icon": "fas fa-mountain",
+      "title": "Fotografi Landscape",
+      "description": "Menangkap keindahan alam, pemandangan kota, dan lanskap dengan komposisi yang memukau.",
+      "features": ["Sunrise/sunset sessions", "Editing profesional", "Cetak ukuran besar"]
+    },
+    {
+      "icon": "fas fa-glass-cheers",
+      "title": "Fotografi Acara",
+      "description": "Mendokumentasikan momen spesial seperti pernikahan, ulang tahun, dan acara perusahaan.",
+      "features": ["Full-day coverage", "200+ foto hasil edit", "Album digital"]
+    }
+  ]
+}
