@@ -14,7 +14,7 @@ backend:
   repo: gilbas-game/Portofolio
   branch: main
   auth_type: pkce
-  app_id: ""  # <-- GANTI dengan GitHub OAuth App Client ID kamu
+  app_id: "Ov23liGORwtRevltDq4C"  # GitHub OAuth App Client ID
 
 media_folder: "images"
 public_folder: "images"
