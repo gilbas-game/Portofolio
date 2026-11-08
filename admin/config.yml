@@ -15,9 +15,11 @@ backend:
   branch: main
   auth_type: pkce
   app_id: "Ov23liGORwtRevltDq4C"  # GitHub OAuth App Client ID
+  base_url: https://gilbas-game.github.io/Portofolio/
+  cms_label_prefix: "LensaKu "
 
 media_folder: "images"
-public_folder: "images"
+public_folder: "/Portofolio/images"
 site_url: https://gilbas-game.github.io/Portofolio/
 display_url: https://gilbas-game.github.io/Portofolio/
 
