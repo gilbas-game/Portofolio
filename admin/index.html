@@ -46,6 +46,16 @@
         text-decoration: none;
         font-weight: 600;
       }
+      #debug {
+        position: fixed;
+        bottom: 8px;
+        right: 8px;
+        font-size: 11px;
+        color: #8892b0;
+        background: rgba(10, 25, 47, 0.9);
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
     </style>
   </head>
   <body>
@@ -71,40 +81,55 @@
 
     <!-- Netlify Identity Widget (wajib untuk login CMS) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- Decap CMS -->
+    <!-- Decap CMS versi stabil untuk git-gateway -->
     <script src="https://unpkg.com/decap-cms@3.6.5/dist/decap-cms.js"></script>
     <script>
       var loading = document.getElementById('loading');
       var errorBox = document.getElementById('error');
+      var debugBox = document.createElement('div');
+      debugBox.id = 'debug';
+      document.body.appendChild(debugBox);
 
-      // Sembunyikan loading setelah CMS siap
+      function showDebug(msg) {
+        debugBox.textContent = msg;
+        console.log('[LensaKu CMS Debug]', msg);
+      }
+
+      function showError(msg) {
+        console.error('[LensaKu CMS Error]', msg);
+        if (loading) loading.style.display = 'none';
+        if (errorBox) errorBox.style.display = 'flex';
+      }
+
+      showDebug('Identity widget: ' + (window.netlifyIdentity ? 'loaded' : 'missing'));
+      showDebug('CMS object: ' + (window.CMS ? 'loaded' : 'missing'));
+
+      // Inisialisasi Netlify Identity
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on('init', function(user) {
-          if (loading) loading.style.display = 'none';
+          showDebug('Identity init. User: ' + (user ? user.email : 'not logged in'));
+          if (!user) {
+            showDebug('Opening login modal...');
+            window.netlifyIdentity.open('login');
+          } else {
+            showDebug('User logged in, CMS should start');
+          }
         });
+      } else {
+        showError('Netlify Identity widget tidak ditemukan.');
       }
-
-      // Deteksi error / timeout CMS init
-      var cmsStarted = false;
-      if (window.CMS) {
-        window.CMS.registerEventListener({ name: 'prePublish' }, function() { cmsStarted = true; });
-      }
-
-      // Jika CMS belum mulai setelah 8 detik, tampilkan pesan setup
-      setTimeout(function() {
-        if (!cmsStarted && loading && errorBox) {
-          loading.style.display = 'none';
-          errorBox.style.display = 'flex';
-        }
-      }, 8000);
 
       // Tangkap error JavaScript
       window.addEventListener('error', function(e) {
-        if (loading && errorBox) {
-          loading.style.display = 'none';
-          errorBox.style.display = 'flex';
-        }
+        showDebug('JS error: ' + (e.message || 'unknown'));
+        showError(e.message || 'JavaScript error');
       });
+
+      // Timeout fallback
+      setTimeout(function() {
+        showDebug('Timeout reached');
+        showError('Timeout: CMS tidak merespons.');
+      }, 12000);
     </script>
   </body>
 </html>
