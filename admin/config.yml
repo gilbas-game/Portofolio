@@ -1,30 +1,21 @@
 # ============================================================
-# LensaKu - Decap CMS Configuration
+# LensaKu - Decap CMS Configuration (Netlify Identity + Git Gateway)
 # ============================================================
 # Cara setup:
-# 1. Buat GitHub OAuth App di https://github.com/settings/developers
-#    - Homepage URL: https://gilbas-game.github.io/Portofolio/
-#    - Authorization callback URL: https://gilbas-game.github.io/Portofolio/admin/
-# 2. Copy Client ID dan paste di app_id di bawah
-# 3. Buka https://gilbas-game.github.io/Portofolio/admin/ untuk login
+# 1. Deploy site ke Netlify (connect repo GitHub)
+# 2. Netlify dashboard → Integrations → Identity → Enable Identity
+# 3. Settings → Identity → Git Gateway → Enable
+# 4. Invite diri sendiri via Identity (masukkan email)
+# 5. Buka email, klik link konfirmasi
+# 6. Akses /admin/ → login pakai email & password
 # ============================================================
 
 backend:
-  name: github
-  repo: gilbas-game/Portofolio
+  name: git-gateway
   branch: main
-  auth_type: pkce
-  app_id: "Ov23liGORwtRevltDq4C"  # GitHub OAuth App Client ID
-  base_url: https://gilbas-game.github.io/Portofolio/
-  cms_label_prefix: "LensaKu "
 
 media_folder: "images"
-public_folder: "/Portofolio/images"
-site_url: https://gilbas-game.github.io/Portofolio/
-display_url: https://gilbas-game.github.io/Portofolio/
-
-# Uncomment untuk development lokal (butuh npx decap-server)
-# local_backend: true
+public_folder: "/images"
 
 # ============================================================
 # KOLEKSI KONTEN

@@ -27,7 +27,6 @@
         margin-bottom: 16px;
       }
       @keyframes spin { to { transform: rotate(360deg); } }
-      .nc-root { display: none; }
     </style>
   </head>
   <body>
@@ -35,6 +34,9 @@
       <div class="spinner"></div>
       <div>Memuat CMS LensaKu...</div>
     </div>
+    <!-- Netlify Identity Widget (wajib untuk login CMS) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3.6.5/dist/decap-cms.js"></script>
     <script>
       // Sembunyikan loading setelah CMS siap
