@@ -6,17 +6,18 @@
     <title>LensaKu - Admin Panel</title>
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📷</text></svg>">
     <style>
-      body { margin: 0; background: #0a192f; }
-      #loading {
+      body { margin: 0; background: #0a192f; font-family: sans-serif; }
+      #loading, #error {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100vh;
-        font-family: sans-serif;
-        color: #64ffda;
-        font-size: 18px;
+        min-height: 100vh;
+        text-align: center;
+        padding: 2rem;
+        box-sizing: border-box;
       }
+      #loading { color: #64ffda; font-size: 18px; }
       #loading .spinner {
         width: 40px;
         height: 40px;
@@ -27,30 +28,83 @@
         margin-bottom: 16px;
       }
       @keyframes spin { to { transform: rotate(360deg); } }
+      #error {
+        color: #ccd6f6;
+        display: none;
+      }
+      #error h2 { color: #64ffda; margin-bottom: 1rem; }
+      #error p { margin: 0.5rem 0; line-height: 1.6; max-width: 520px; }
+      #error ol { text-align: left; max-width: 520px; margin: 1rem 0; }
+      #error li { margin: 0.5rem 0; }
+      #error .btn {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        background: #64ffda;
+        color: #0a192f;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+      }
     </style>
   </head>
   <body>
     <div id="loading">
       <div class="spinner"></div>
       <div>Memuat CMS LensaKu...</div>
+      <p style="font-size: 13px; color: #8892b0; margin-top: 12px;">Tunggu 5-10 detik</p>
     </div>
+
+    <div id="error">
+      <h2>CMS belum siap</h2>
+      <p>Halaman ini membutuhkan <strong>Netlify Identity</strong> dan <strong>Git Gateway</strong> untuk bekerja.</p>
+      <ol>
+        <li>Buka dashboard Netlify site ini</li>
+        <li>Klik <strong>Integrations</strong> → <strong>Identity</strong> → <strong>Enable Identity</strong></li>
+        <li>Klik <strong>Settings</strong> → <strong>Identity</strong> → <strong>Services</strong> → <strong>Enable Git Gateway</strong></li>
+        <li>Invite diri sendiri di menu <strong>Identity → Invite users</strong></li>
+        <li>Cek email, set password, lalu kembali ke halaman ini</li>
+      </ol>
+      <p>Jika sudah di-setup, coba refresh halaman ini.</p>
+      <a class="btn" href="/">Kembali ke website</a>
+    </div>
+
     <!-- Netlify Identity Widget (wajib untuk login CMS) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@3.6.5/dist/decap-cms.js"></script>
     <script>
+      var loading = document.getElementById('loading');
+      var errorBox = document.getElementById('error');
+
       // Sembunyikan loading setelah CMS siap
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.on('init', function() {
-          var loading = document.getElementById('loading');
+        window.netlifyIdentity.on('init', function(user) {
           if (loading) loading.style.display = 'none';
         });
       }
-      // Fallback: sembunyikan loading setelah 8 detik maksimal
+
+      // Deteksi error / timeout CMS init
+      var cmsStarted = false;
+      if (window.CMS) {
+        window.CMS.registerEventListener({ name: 'prePublish' }, function() { cmsStarted = true; });
+      }
+
+      // Jika CMS belum mulai setelah 8 detik, tampilkan pesan setup
       setTimeout(function() {
-        var loading = document.getElementById('loading');
-        if (loading) loading.style.display = 'none';
+        if (!cmsStarted && loading && errorBox) {
+          loading.style.display = 'none';
+          errorBox.style.display = 'flex';
+        }
       }, 8000);
+
+      // Tangkap error JavaScript
+      window.addEventListener('error', function(e) {
+        if (loading && errorBox) {
+          loading.style.display = 'none';
+          errorBox.style.display = 'flex';
+        }
+      });
     </script>
   </body>
 </html>
